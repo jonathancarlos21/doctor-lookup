@@ -25,9 +25,9 @@ _This application will be able to make API requests to BetterDoctor in order to 
 2. Navigate to the desired directory in which you want to clone this repository.
 3. Use `git clone https://github.com/jonathancarlos21/doctor-lookup` to clone this repository.
 4. Open the repository.
-4. Install all dependencies using '$ npm install' in your terminal.
-5. Use '$ npm run build' to start a package bundle.
-5. Drag the html file into your broswer. 
+4. Install all dependencies using `$ npm install` in your terminal.
+5. Use `$ npm run build` to start a package bundle.
+5. Drag the html file into your broswer or use `$ npm run start` in your terminal for a live server. 
 6. Enter your medical issues or doctor's name.
 7. Click "Enter!"
 
