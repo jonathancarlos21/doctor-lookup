@@ -17,9 +17,8 @@ module.exports = {
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'Ping Pong',
+      title: 'Doctor Lookup',
       template: './src/index.html',
       inject: 'body'
     }),
