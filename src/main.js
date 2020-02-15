@@ -8,13 +8,15 @@ $(document).ready(function() {
   $('#weatherLocation').click(function() {
     const city = $('#location').val();
     $('#location').val("");
-  });
 
-  const getElements = function(response) {
-    if (response) {
-      $('.name').text("");
-    } else {
-      $('.name').text(`There was an error handling your request.`);
-    }
-  } 
+    getDoctors();
+    
+    const getElements = function(response) {
+      if (response) {
+        $('.name').text("");
+      } else {
+        $('.name').text(`There was an error handling your request.`);
+      }
+    } 
+  });
 });
