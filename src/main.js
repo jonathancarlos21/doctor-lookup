@@ -9,4 +9,12 @@ $(document).ready(function() {
     const city = $('#location').val();
     $('#location').val("");
   });
+
+  const getElements = function(response) {
+    if (response) {
+      $('.name').text("");
+    } else {
+      $('.name').text(`There was an error handling your request.`);
+    }
+  } 
 });
