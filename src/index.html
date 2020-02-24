@@ -10,11 +10,19 @@
     <div class="jumbotron">
       <h1>Doctor Lookup</h1>
     </div>
-    <label for="name">Enter a name:</label>
-    <input id="name" type="text">
-    <button class="btn-success" id="doctorName">Find your doctor.</button>
-    <div class="showErrors"></div>
-    <div class="showDoctors"></div>
+    <div class="row">
+      <label for="name">Enter a name:</label>
+      <input id="name" type="text">
+      <button class="btn-success" id="doctorByName">Find your doctor!</button>
+
+      <label for="condition">Enter a symptom:</label>
+      <input id="condition" type="text">
+      <button class="btn-success" id="doctorByCondition">Find your doctor!</button>
+    </div>
+    <div class="row">
+      <div class="showErrors"></div>
+      <div class="showDoctors"></div>
+    </div>
   </div>
 </body>
 </html>
