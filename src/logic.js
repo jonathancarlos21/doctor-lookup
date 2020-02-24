@@ -1,4 +1,4 @@
-export class DoctorsIndex {
+export class DoctorService {
   async getDoctorsByName(name) {   
     try {
       let response = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=or-portland&skip=0&limit=10&user_key=${process.env.API_KEY}`);
