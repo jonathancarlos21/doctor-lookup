@@ -30,12 +30,11 @@ _This application will be able to make API requests to BetterDoctor in order to 
 7. Visit `https://developer.betterdoctor.com/` for instructions on generating your personal API-key.
 8. Create a `.env` file in the root directory.
 9. Copy and paste `API_KEY =` followed by your actual key.
-10. Use `$ npm run start` in your terminal to access live server.
+10. Use `$ npm run start` in your terminal to access a live server.
 11. Enter your medical issues or a doctor's name.
 12. Click "Enter!"
 
 ## **Known Bugs**
-
 
 
 ## **Support and contact details**
