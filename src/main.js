@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
-import { DoctorService } from './../src/logic';
+import { DoctorServices } from './doctorServices';
 
 $(document).ready(function() {
   $('#doctorByName').click(function() {
@@ -10,16 +10,18 @@ $(document).ready(function() {
     $('#name').val("");
 
     (async () => {
-      let doctorsIndex = new DoctorService();
+      let doctorsIndex = new DoctorServices();
       const response = await doctorsIndex.getDoctorsByName(name);
       getElements(response);
     })();
     
     function getElements(response) {
-      if (response) {
-        $('.showDoctors').text("");
-      } else {
-        $('.showErrors').text(`There was an error handling your request.`);
+      for (let i = 0; i < response.length; i++) {
+        if (response) {
+          $('.showDoctors').append(response.data[i].practices[i].name);
+        } else {
+          $('.showErrors').text(`There was an error handling your request.`);
+        }
       }
     }
   });
