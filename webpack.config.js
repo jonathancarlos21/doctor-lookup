@@ -18,7 +18,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Doctor Lookup',
+      title: 'doctorlookup',
       template: './src/index.html',
       inject: 'body'
     }),

@@ -5,9 +5,9 @@ import $ from 'jquery';
 import { DoctorsIndex } from './../src/logic';
 
 $(document).ready(function() {
-  $('#name').click(function() {
-    const name = $('#doctorName').val();
-    $('#doctorName').val("");
+  $('#doctorName').click(function() {
+    const name = $('#name').val();
+    $('#name').val("");
 
     (async () => {
       let doctorsIndex = new DoctorsIndex();

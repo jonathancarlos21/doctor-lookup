@@ -9,7 +9,8 @@ export class DoctorsIndex {
         jsonifiedResponse = false;
       }
       getElements(jsonifiedResponse);
-    } catch {
+    } 
+    catch {
       getElements(false);
     }
   }
