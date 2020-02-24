@@ -6,12 +6,12 @@ import { DoctorsIndex } from './../src/logic';
 
 $(document).ready(function() {
   $('#name').click(function() {
-    const condition = $('#doctorName').val();
+    const name = $('#doctorName').val();
     $('#doctorName').val("");
 
     (async () => {
       let doctorsIndex = new DoctorsIndex();
-      const response = await doctorsIndex.getDoctorsByCondition(condition);
+      const response = await doctorsIndex.getDoctorsByName(name);
       getElements(response);
     })();
     
