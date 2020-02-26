@@ -42,6 +42,11 @@ _This application will be able to make API requests to BetterDoctor in order to 
 If you have any questions, comments, or concerns, feel free to contact the content creator at examplemail@company.net 
 
 ## **Technologies used**
+
+* Webpack
+
+* Node.js / npm
+
 * BetterDoctor API
 
 * JavaScript
