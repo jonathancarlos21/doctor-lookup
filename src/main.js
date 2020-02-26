@@ -13,15 +13,18 @@ $(document).ready(function() {
       let doctorsIndex = new DoctorServices();
       const response = await doctorsIndex.getDoctorsByName(name);
       getElements(response);
+      console.log(response);
     })();
     
     function getElements(response) {
-      for (let i = 0; i < response.length; i++) {
-        if (response) {
-          $('.showDoctors').append(response.data[i].practices[i].name);
-        } else {
-          $('.showErrors').text(`There was an error handling your request.`);
-        }
+      for (let i = 0; i < response.data.length; i++) {
+        $('.showDoctors').append("<li>" + response.data[i].profile.first_name + " " + response.data[i].profile.last_name + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].visit_address.street + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].visit_address.city + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].visit_address.state + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].visit_address.zip + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].website + "</li>");
+        $('.showDoctors').append("<li>" + response.data[i].practices[0].accepts_new_patients + "</li>");
       }
     }
   });
