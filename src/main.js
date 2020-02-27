@@ -9,17 +9,19 @@ $(document).ready(function() {
     const userInput = $("#userInput").val();
     $("#userInput").val("");
     $(".showDoctors").empty();
+    $(".showErrors").empty();
 
     (async () => {
       let doctorsIndex = new DoctorServices();
       const response = await doctorsIndex.getDoctors(userInput);
-      if (!response) {
+      if (!response.data) {
         $(".showErrors").append("<ul>" + response.status + "<br>" + response.statusText + "</ul>");
-      } else if (response.data.length === 0) {
-        $("showErrors").text("Sorry! There are no matches that fit your search.");
+      } else if (response.data.length == 0) {
+        $(".showErrors").append("Sorry! There are no matches that fit your search.");
       } else {
         getElements(response);
       }
+      console.log(response);
   })();
     
     function getElements(response) {

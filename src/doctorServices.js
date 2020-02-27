@@ -7,7 +7,7 @@ export class DoctorServices {
       if (response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
       } else {
-        jsonifiedResponse = false;
+        jsonifiedResponse = response;
       }
       return jsonifiedResponse;
     } catch(error) {
