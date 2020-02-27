@@ -36,6 +36,7 @@ _This application will be able to make API requests to BetterDoctor in order to 
 
 ## **Known Bugs**
 
+There are no known bugs at this time.
 
 ## **Support and contact details**
 
