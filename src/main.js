@@ -14,6 +14,7 @@ $(document).ready(function() {
     (async () => {
       let doctorsIndex = new DoctorServices();
       const response = await doctorsIndex.getDoctors(userInput);
+
       if (!response.data) {
         $(".showErrors").append("<ul>" + response.status + "<br>" + response.statusText + "</ul>");
       } else if (response.data.length == 0) {
@@ -21,7 +22,7 @@ $(document).ready(function() {
       } else {
         getElements(response);
       }
-      console.log(response);
+      
   })();
     
     function getElements(response) {
@@ -30,8 +31,16 @@ $(document).ready(function() {
         $(".showDoctors").append(response.data[i].practices[0].visit_address.street + "<br>");
         $(".showDoctors").append(response.data[i].practices[0].visit_address.city + ", " + response.data[i].practices[0].visit_address.state + " " + response.data[i].practices[0].visit_address.zip + "<br>");
         $(".showDoctors").append(response.data[i].practices[0].phones[0].number + "<br>");
-        $(".showDoctors").append(response.data[i].practices[0].website + "<br>");
-        $(".showDoctors").append(response.data[i].practices[0].accepts_new_patients + "<br>");
+        if (response.data[i].practices[0].website === undefined) {
+          $(".showDoctors").append("There is no website available." + "<br>");
+        } else {
+          $(".showDoctors").append(response.data[i].practices[0].website + "<br>");
+        }
+        if (response.data[i].practices[0].accepts_new_patients === false) {
+          $(".showDoctors").append("This doctor is not currently accepting new patients." + "<br>");
+        } else {
+          $(".showDoctors").append("This doctor is currently accepting new patients." + "<br>");
+        }
       }
     }
   });
